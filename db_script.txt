@@ -1,0 +1,48 @@
+db.getName()
+
+db.createCollection("student")
+
+db.study.drop()
+
+show dbs
+
+use study
+
+db.getName()
+
+db.createCollection("student")
+
+show collections
+
+recode1 = {
+    name: "ymh",
+    age: 39,
+    gender: "M",
+    like: [
+        "football",
+        "beauty",
+        "money"
+    ]
+}
+
+recode2 = {
+    name: "yjh",
+    age: 34,
+    gender: "F",
+    like: [
+        "cooking",
+        "beauty",
+        "money"
+    ]
+}
+
+// db.student.insertOne(recode1)
+db.student.insertOne(recode2)
+
+db.student.count()
+
+db.student.find({age: {$gt: 30}})
+
+db.student.find({_id: ObjectId("611cf5f2f40e993a96cfe106")})
+
+db.student.updateOne({_id: ObjectId("611cf5f2f40e993a96cfe106")}, {$set: {age: 31}})
